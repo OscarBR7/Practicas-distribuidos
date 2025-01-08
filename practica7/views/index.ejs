@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Registros</title>
+</head>
+<body>
+    <h1>Registros</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% rows.forEach(row => { %>
+                <tr>
+                    <td><%= row.id %></td>
+                    <td><%= row.name %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <h2>Agregar Nuevo Registro</h2>
+    <form action="/master/create" method="POST">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
